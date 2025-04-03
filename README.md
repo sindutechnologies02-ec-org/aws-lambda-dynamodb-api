@@ -1,16 +1,37 @@
-# AWS Lambda with DynamoDB
+i# AWS Lambda with DynamoDB
+#project Overview
+This project demonstrates how to build a **serverless REST API** using:
+✅ AWS Lambda  
+✅ API Gateway  
+✅ DynamoDB  
+✅ Python (boto3)  
 
-This project contains an AWS Lambda function that adds user data to a DynamoDB table using API Gateway.
+## 🚀 Features
+- Handles user data storage using DynamoDB
+- Serverless architecture reduces costs
+- Uses IAM roles for secure access  
 
-## Deployment Steps
-1. Deploy the function on AWS Lambda.
-2. Configure API Gateway to invoke the function.
-3. Ensure DynamoDB table `UsersTable` exists.
-4. Test the API using `curl` or Postman.
+## 🛠️ Technologies Used
+- AWS Lambda  
+- AWS API Gateway  
+- DynamoDB  
+- Python (boto3, uuid)  
 
-## Technologies Used
-- AWS Lambda
-- API Gateway
-- DynamoDB
-- Python (Boto3)
+## 🔧 Setup & Deployment
+1️⃣ Clone this repository  
+```bash
+git clone https://https://github.com/sindutechnologies02-ec-org/aws-lambda-dynamodb-api.git
+2️⃣ Install dependencies
+pip install boto3
+3️⃣ Deploy using AWS Lambda
+POST /users - Add user to DynamoDB
+Example request:
+curl -X POST "https://xyz1234.execute-api.us-east-1.amazonaws.com/dev/users" \
+     -H "Content-Type: application/json" \
+     -d '{"userName": "John Doe", "userEmail": "john@example.com"}'
+Expected Output:
+{
+    "statusCode": 200,
+    "body": "{\"message\": \"User added successfully\", \"userId\": \"some-unique-id\"}"
+}
 
