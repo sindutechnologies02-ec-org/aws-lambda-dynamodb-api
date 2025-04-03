@@ -34,4 +34,18 @@ def lambda_handler(event, context):
             "statusCode": 500,
             "body": json.dumps({"error": str(e)})
         }
+if __name__ == "__main__":  # <-- No spaces before this line
+    # Simulated API Gateway Event
+    test_event = {
+        "body": '{"userName": "John Doe", "userEmail": "john@example.com"}'
+    }
+
+    # Calling the Lambda function manually
+    response = lambda_handler(test_event, None)
+
+    # Print the output
+    print(response)
+
+
+
 
